@@ -30,38 +30,6 @@ public class Steps {
     }
 
 
-    /*@Given("^Open the Firefox and launch the website \"(.*)\"$")
-    public void launch(String webUrl) throws Throwable
-    {
-        System.setProperty("webdriver.gecko.driver", "/Users/nandkishorpowar/IdeaProjects/directlinetest/geckodriver");
-        driver= new FirefoxDriver();
-        driver.manage().window().maximize();
-        driver.get(webUrl);
-    }
-
-
-    @When("^Enter the Car Reg number \"(.*)\" and Find Vehicle$")
-    public void enter_the_Car_reg_Number(String vehicleReg) throws Throwable
-    {
-        driver.findElement(By.name("vehicleReg")).sendKeys(vehicleReg);
-        driver.findElement(By.name("btnfind")).click();
-    }
-
-
-    @Then("^Verify Result$")
-    public void verify_result() throws Throwable
-    {
-        Assert.assertEquals("Result for : OV12UYY", driver.findElement(By.className("result")).getText());
-    }
-
-    @Then("^Verify Result \"([^\"]*)\"$")
-    public void verify_result(String xpath) throws Throwable
-    {
-        Assert.assertEquals("Result for : OV12UYY", driver.findElement(By.className("result")).getText());
-        Assert.assertEquals("09 FEB 2022 : 16 : 26", driver.findElement(By.xpath(xpath)).getText());
-    }
-    */
-
     @Given("^the car registration Number \"(.*)\"$")
     public void the_car_registration_Number(String vehicleReg) throws Throwable
     {
