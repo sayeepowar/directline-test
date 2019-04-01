@@ -1,5 +1,6 @@
 package com.sayeepowar.directlinetest.steps;
 
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -50,6 +51,18 @@ public class Steps {
     public void verify_the_with(String result, String resultString) throws Throwable
     {
         Assert.assertEquals((resultString), driver.findElement(By.xpath(result)).getText());
+
+    }
+
+    @And("^compare results using \"([^\"]*)\" \"(.*)\" and \"([^\"]*)\" \"(.*)\"$")
+    public void verify_the_with(String coverStartXPath, String coverStart, String coverEndXpath, String coverEnd) throws Throwable {
+
+        if (coverStartXPath!=null && !coverStartXPath.trim().equals("")) {
+            Assert.assertEquals((coverStart), driver.findElement(By.xpath(coverStartXPath)).getText());
+        }
+        if (coverEndXpath!=null && !coverEndXpath.trim().equals("")) {
+            Assert.assertEquals((coverEnd), driver.findElement(By.xpath(coverEndXpath)).getText());
+        }
 
     }
 
